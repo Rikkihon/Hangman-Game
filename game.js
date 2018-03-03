@@ -2,9 +2,12 @@
 //should be a prompt here, but my node said that prompt is not defined
 var p1 = ('Enter a letter').toLowerCase();
 
+//This below is just copied from the lecture in case I need my homework to create a new section of code
+// const newDiv = documemt.createElement('div');
+// newDiv.innerHTML = "some extra text"
+// target.innerHTML = "Some Hangman Game";
+// document.appendChild(newDiv);
 
-
-const newDiv = documemt.createElement('div');
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w","x","y","z"];
 const guess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w","x","y","z"];
 
@@ -18,6 +21,19 @@ const n = wordSelection.length;
 console.log(n);
 const wordChoice = wordSelection.split("");
 console.log(wordChoice);
+
+//need to decide how to declare the constants 
+const wins = j; 
+console.log(j);
+
+//This is for how to press the key to continue
+//from this website: https://api.jquery.com/keypress/
+// $( "#PushButton" ).keypress(function() {
+//   console.log( "Handler for .keypress() called." );
+// });
+// $( "#other" ).click(function() {
+//   $( "#target" ).keypress();
+// });
 
 var turns = 7; 
 //Then we will draw dashes in the HTML target to the user 
@@ -42,36 +58,36 @@ while (turns > 0) {
 if(turns ===  6){
     //target2.innerHTML = 'The head appears'
     console.log(`head`);
-    document.getElementById('target1').innerHTML = "Head Drawn";
+    document.getElementById('target1').innerHTML = "Head Drawn. You have 6 guesses left";
   } else if (turns == 5) {
     //target2.innerHTML = 'The body appears'
     //display "head"
-    document.getElementById('target2').innerHTML = "Body Drawn";
+    document.getElementById('target2').innerHTML = "Body Drawn. You have 5 guesses left.";
     console.log(`body`);
   } else if(turns === 4) {
-    document.getElementById('target3').innerHTML = "Arm Drawn";
+    document.getElementById('target3').innerHTML = "Arm Drawn. You have 4 guesses left.";
     //display "body"
     console.log(`arm`);
   } else if(turns === 3) {
-    document.getElementById('target4').innerHTML = "Arm Drawn";
+    document.getElementById('target4').innerHTML = "Arm Drawn.You have 3 guesses left. ";
     //display "arm"
     console.log(`arm`);
   } else if (turns ===2 ){
    // target2.innerHTML = 'The leg appears'
-   document.getElementById('target5').innerHTML = "Other Arm Drawn";
+   document.getElementById('target5').innerHTML = "Other Arm Drawn.You have 2 guesses left.";
     console.log(`other arm`);
   } else if(turns === 1 ){
-    document.getElementById('target6').innerHTML = "Leg Drawn";
+    document.getElementById('target6').innerHTML = "Leg Drawn.You have 1 guess left.";
     console.log('leg');
   }  
     else if(turns === 0 ){
      //target2.innerHTML = 'Game over! Lets play again!'
-     document.getElementById('target7').innerHTML = "Other Leg Drawn";
+     document.getElementById('target7').innerHTML = "Other Leg Drawn. Sorry, game over.";
         console.log('other leg');
   } 
      
        //This reduces the turn count if the letter wasn't found
    }
-// want to check if we found all of the letters in the word 
+// want to check if i found all of the letters in the word 
 // ask user to enter another letter in p1 
 }

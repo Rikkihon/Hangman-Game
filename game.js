@@ -1,12 +1,5 @@
 'use strict'
-//should be a prompt here, but my node said that prompt is not defined
-var p1 = ('Enter a letter').toLowerCase();
-
-//This below is just copied from the lecture in case I need my homework to create a new section of code
-// const newDiv = documemt.createElement('div');
-// newDiv.innerHTML = "some extra text"
-// target.innerHTML = "Some Hangman Game";
-// document.appendChild(newDiv);
+var p1 = prompt('Enter a letter').toLowerCase();
 
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w","x","y","z"];
 const guess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w","x","y","z"];
@@ -15,30 +8,35 @@ const guess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 const wordsForHangman = ["Nap", "quiet", "Please", "Piggie", "Gerald", "Pigeon", "Chirp", "Chop", "Doctor", "Hot dog"];
 //This randomly chooses the element from the array
 const wordSelection = wordsForHangman[Math.floor(Math.random() * wordsForHangman.length)];
-console.log(wordSelection);
-//Then we will count the number of characters in the array selected
-const n = wordSelection.length;
-console.log(n);
+console.log = wordSelection;
+//Then we will count the number of characters in the string selected from the array
 const wordChoice = wordSelection.split("");
-console.log(wordChoice);
+console.log = wordChoice.length;
+const dashes = wordChoice.length;
+function letterEntry(){
+var n = 0;
 
+for (n++; n <=dashes; ){
+  document.getElementById('dashes').innerHTML = "_"
+}
+
+ 
+}
 //need to decide how to declare the constants 
-const wins = j; 
-console.log(j);
+const wins = 5; 
+document.getElementById('wins').innerHTML = wins;
 
-//This is for how to press the key to continue
-//from this website: https://api.jquery.com/keypress/
-// $( "#PushButton" ).keypress(function() {
-//   console.log( "Handler for .keypress() called." );
-// });
-// $( "#other" ).click(function() {
-//   $( "#target" ).keypress();
-// });
+while (turns > 7) {
+  var p1 = prompt('Enter a letter').toLowerCase();
+  document.getElementById('dashes').innerHTML = "_"
+  document.getElementById('other').innerHTML = p1;
+  }
+  if (turns <=7) {
+  document.getElementById('wins').innerHTML = "Game Over";
+  }
 
 var turns = 7; 
 //Then we will draw dashes in the HTML target to the user 
-document.getElementById('target8').innerHTML = "_"* n;
-
 //need two loops, one to iterate through the wordChoice and find all of the instances of that letter
 //One to count the number of turns left
 while (turns > 0) { 
@@ -55,35 +53,28 @@ while (turns > 0) {
    if  (matchCount === 0) {
        turns--;
        
-if(turns ===  6){
-    //target2.innerHTML = 'The head appears'
-    console.log(`head`);
-    document.getElementById('target1').innerHTML = "Head Drawn. You have 6 guesses left";
+if (turns ===  6){
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/circle.png">`
+   
   } else if (turns == 5) {
-    //target2.innerHTML = 'The body appears'
-    //display "head"
-    document.getElementById('target2').innerHTML = "Body Drawn. You have 5 guesses left.";
-    console.log(`body`);
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Body.png">`
+   
   } else if(turns === 4) {
-    document.getElementById('target3').innerHTML = "Arm Drawn. You have 4 guesses left.";
-    //display "body"
-    console.log(`arm`);
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick figure.png">`
+   
+    
   } else if(turns === 3) {
-    document.getElementById('target4').innerHTML = "Arm Drawn.You have 3 guesses left. ";
-    //display "arm"
-    console.log(`arm`);
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick Figure with 2 arms.png">`
+   
   } else if (turns ===2 ){
-   // target2.innerHTML = 'The leg appears'
-   document.getElementById('target5').innerHTML = "Other Arm Drawn.You have 2 guesses left.";
-    console.log(`other arm`);
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick figure one leg.png">~`
   } else if(turns === 1 ){
-    document.getElementById('target6').innerHTML = "Leg Drawn.You have 1 guess left.";
-    console.log('leg');
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick figure one leg.png">`
+   
   }  
     else if(turns === 0 ){
-     //target2.innerHTML = 'Game over! Lets play again!'
-     document.getElementById('target7').innerHTML = "Other Leg Drawn. Sorry, game over.";
-        console.log('other leg');
+      document.getElementById('target1').innerHTML = `<img src="//Users/rikki/Desktop/Hangman-Game/assets/images/Full stick figure.png">`
+   
   } 
      
        //This reduces the turn count if the letter wasn't found

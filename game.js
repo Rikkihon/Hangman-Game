@@ -16,19 +16,25 @@ const dashes = wordChoice.length;
 function letterEntry(){
 var n = 0;
 
-for (n++; n <=dashes; ){
-  document.getElementById('dashes').innerHTML = "_"
+for (n = 0; n++; n <=dashes ){
+  //this should draw the dashes
+  n++;
+  document.getElementById('dashes').innerHTML = "_";
+  console.log = n;
 }
 
+for (i = 0; i++; i<= 10) {
+  var p1 = prompt('Enter a letter').toLowerCase();
+  document.getElementById('other').innerHTML = p1;
+}
  
 }
-//need to decide how to declare the constants 
+//need to decide how to declare the number of wins
 const wins = 5; 
 document.getElementById('wins').innerHTML = wins;
 
 while (turns > 7) {
   var p1 = prompt('Enter a letter').toLowerCase();
-  document.getElementById('dashes').innerHTML = "_"
   document.getElementById('other').innerHTML = p1;
   }
   if (turns <=7) {
@@ -54,26 +60,26 @@ while (turns > 0) {
        turns--;
        
 if (turns ===  6){
-    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/circle.png">`
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/circle.png" alt="head" width="300" height="400"></img>`
    
   } else if (turns == 5) {
-    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Body.png">`
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Body.png" alt="head" width="300" height="400">`
    
   } else if(turns === 4) {
-    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick figure.png">`
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick figure.png" alt="head" width="300" height="400">`
    
     
   } else if(turns === 3) {
-    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick Figure with 2 arms.png">`
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick Figure with 2 arms.png" alt="head" width="300" height="400"></img>`
    
   } else if (turns ===2 ){
-    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick figure one leg.png">~`
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick figure one leg.png" alt="head" width="300" height="400"></img>`
   } else if(turns === 1 ){
-    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick figure one leg.png">`
+    document.getElementById('target1').innerHTML = `<img src="/Users/rikki/Desktop/Hangman-Game/assets/images/Stick figure one leg.png" alt="head" width="300" height="400"></img>`
    
   }  
     else if(turns === 0 ){
-      document.getElementById('target1').innerHTML = `<img src="//Users/rikki/Desktop/Hangman-Game/assets/images/Full stick figure.png">`
+      document.getElementById('target1').innerHTML = `<img src="//Users/rikki/Desktop/Hangman-Game/assets/images/Full stick figure.png" alt="head" width="300" height="400"></img>`
    
   } 
      

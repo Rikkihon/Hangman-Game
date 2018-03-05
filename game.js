@@ -15,37 +15,33 @@ var dashes = wordChoice.length;
 var dashesString = "___________________";
 document.getElementById('dashes').innerHTML = dashesString.substring(0, wordChoice.length - 1)
 
-// function letterEntry(){
-//   var p1 = prompt('Enter a letter').toLowerCase();
-// }
-
 var dash = ["_ ","_ ","_" ,"_" ,"_" ,"_ ","_ ", "_ ", "_ "];
 var n = 0;
+var arr1 = []; 
 
-for (n = 0; n <=wordChoice.length; n++){
-  //this should draw the dashes
-  document.getElementById("dashes").innerHTML = "_";
-  console.log(n);
+for (var n = 0; n <= wordChoice.length; n++) {              // loop 10 times
+  arr1.push('_ ' + ` `+ (i+1)); // push the value into the array
 }
-document.getElementById("dashes").innerHTML = "_";
+
+document.getElementById('dashes').innerHTML = arr1.join('  ')// print the results
+
+ 
 
 var i = 0;
-for (i = 0; i<= 8; i++) {
-  var p1 = prompt('Enter a letter').toLowerCase();
-  const guesses = p1;
-  console.log(p1);
-  console.log(guesses);
-  document.getElementById('other').innerHTML = guesses;
-}
- 
+var arr = [];                               // define our array
+
+  for (var i = 0; i < 10; i++) {              // loop 10 times
+    arr.push(prompt('Enter a letter ' + (i+1))); // push the value into the array
+  }
+  
+  document.getElementById('other').innerHTML = arr.join(', ')// print the results
+
 
 //need to decide how to declare the number of wins
 const wins = 5; 
 
 while (turns > 7) {
-  var p1 = prompt('Enter a letter').toLowerCase();
-  document.getElementById('other').innerHTML = p1;
-  document.getElementById('wins').innerHTML = "5";
+  document.getElementById('wins').innerHTML = ('wins') ;
   }
   if (turns <=7) {
   document.getElementById('wins').innerHTML = "Game Over";

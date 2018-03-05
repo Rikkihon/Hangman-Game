@@ -11,30 +11,28 @@ console.log(wordSelection);
 //Then we will count the number of characters in the string selected from the array
 const wordChoice = wordSelection.split("");
 console.log(wordChoice.length);
-var dashes = wordChoice.length;
-var dashesString = "___________________";
-document.getElementById('dashes').innerHTML = dashesString.substring(0, wordChoice.length - 1)
+var arr3 = [wordSelection];
+console.log(arr3);
 
-var dash = ["_ ","_ ","_" ,"_" ,"_" ,"_ ","_ ", "_ ", "_ "];
 var n = 0;
 var arr1 = []; 
 
-for (var n = 0; n <= wordChoice.length; n++) {              // loop 10 times
-  arr1.push('_ ' + ` `+ (i+1)); // push the value into the array
+for (var n = 0; n <= wordChoice.length; n++) {              //loop the length of the word
+  arr1.push('_  '); // push the value into the array
 }
 
-document.getElementById('dashes').innerHTML = arr1.join('  ')// print the results
+document.getElementById('dashes').innerHTML = arr1.toString();// print the results
 
  
 
-var i = 0;
-var arr = [];                               // define our array
+// var i = 0;
+// var arr = [];                               // define our array
 
-  for (var i = 0; i < 10; i++) {              // loop 10 times
-    arr.push(prompt('Enter a letter ' + (i+1))); // push the value into the array
-  }
+//   for (var i = 0; i < 10; i++) {              // loop 10 times
+//     arr.push(prompt('Enter a letter ' + (i+1))); // push the value into the array
+//   }
   
-  document.getElementById('other').innerHTML = arr.join(', ')// print the results
+//   document.getElementById('other').innerHTML = arr.join(', ')// print the results
 
 
 //need to decide how to declare the number of wins
@@ -87,7 +85,8 @@ if (turns ===  6){
   }  
     else if(turns === 0 ){
       document.getElementById('target1').innerHTML = `<img src="assets/images/Full stick figure.png" alt="head" width="300" height="400"></img>`
-   
+      console.log(wordSelection);
+      document.getElementById('target7').innerHTML = `The word was +` + wordSelection;
   } 
      
        //This reduces the turn count if the letter wasn't found

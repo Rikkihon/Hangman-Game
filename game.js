@@ -13,7 +13,9 @@ var i = 0;
 var arr = [];  //the user's letters 
 var turns = 10;   
 var n = 0;
-var arr1 = [];                          // my letters for my word
+var arr1 = [];// my letters for my word
+var wins = []; //this part of my code doesnt work well yet 
+var loss = []; //this part of my code doesnt work well yet 
 
 
 
@@ -27,6 +29,7 @@ document.getElementById('other').innerHTML = arr.join(', ')// print the results
   for (var i = 0; i < 10; i++) {              // loop 10 times
     arr.push(prompt('Enter a letter. You will be asked 10 times and you can not see the dashes or where the letters are going in this game.  But if you look in console log, you will get a great hint!' + (i+1))); // push the value into the array
     
+    document.getElementById('target7').innerHTML = `The word was ` + wordSelection;
     //search the word for the letter entered
 
     var found = false;
@@ -43,7 +46,7 @@ document.getElementById('other').innerHTML = arr.join(', ')// print the results
     if(found == true) {
       arr1.toString();
       //update the dashes / html content here
-      document.getElementById('dashes').innerHTML = arr1.toString();
+      document.getElementById('target4').innerHTML = arr.toString();
       turns --;
     }
 
@@ -75,6 +78,7 @@ document.getElementById('other').innerHTML = arr.join(', ')// print the results
           document.getElementById('target1').innerHTML = `<img src="assets/images/Full stick figure.png" alt="head" width="300" height="400"></img>`
          
       } 
+
     }
   
   }
@@ -85,6 +89,13 @@ document.getElementById('other').innerHTML = arr.join(', ')// print the results
 
 
 //need to decide how to declare the number of wins
+
+while (wins = true;) {
+  document.getElementById('wins').innerHTML = 'You have ' + wins + 'wins';
+  }
+  if (wins = false) {
+  
+  }
 
 while (turns >= 7) {
   document.getElementById('wins').innerHTML = 'You have ' + wins + 'wins';

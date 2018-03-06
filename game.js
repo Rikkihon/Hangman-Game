@@ -17,13 +17,12 @@ var arr1 = [];                          // my letters for my word
 
 
 
-for (var n = 0; n <= wordChoice.length; n++) {              //loop the length of the word
+for (var n = 0; n < wordChoice.length; n++) {              //loop the length of the word
   arr1.push('_  '); // push the value into the array
 }
-
+document.getElementById('dashes').innerHTML ='These are the letters you entered:' + arr.toString();// print the results
+console.log(arr1.toString());
 document.getElementById('other').innerHTML = arr.join(', ')// print the results
-document.getElementById('dashes').innerHTML = arr1.toString();// print the results
-document.getElementById('target4').innerHTML = 'These are the letters you entered' + arr.toString();
   
   for (var i = 0; i < 10; i++) {              // loop 10 times
     arr.push(prompt('Enter a letter. You will be asked 10 times and you can not see the dashes or where the letters are going in this game.  But if you look in console log, you will get a great hint!' + (i+1))); // push the value into the array
@@ -52,8 +51,7 @@ document.getElementById('target4').innerHTML = 'These are the letters you entere
     else {
       turns --;
       alert("No match! You have " + turns + " turns left");
-    
-      document.getElementById('target8').innerHTML = `These are your letters`+ arr.toString;
+     
      if (turns ===  6){
         document.getElementById('target1').innerHTML = `<img src="assets/images/circle.png" alt="head" width="300" height="400"></img>`
        
